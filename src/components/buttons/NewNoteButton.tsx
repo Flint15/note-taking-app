@@ -1,8 +1,14 @@
-export default function NewNoteButton() {
+export default function NewNoteButton({
+  notes,
+  setNotes,
+}: {
+  notes: string[];
+  setNotes: (notes: string[]) => void;
+}) {
   return (
     <button
       onClick={() => {
-        console.log("love");
+        setNotes([...notes, "love"]);
       }}
     >
       New Note
