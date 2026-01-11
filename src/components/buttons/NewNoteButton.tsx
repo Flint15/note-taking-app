@@ -1,14 +1,20 @@
+interface Note {
+  name: string;
+  id: string;
+}
+
 export default function NewNoteButton({
   notes,
   setNotes,
 }: {
-  notes: string[];
-  setNotes: (notes: string[]) => void;
+  notes: Note[];
+  setNotes: (notes: Note[]) => void;
 }) {
   return (
     <button
       onClick={() => {
-        setNotes([...notes, "love"]);
+        setNotes([...notes, { name: "love", id: crypto.randomUUID() }]);
+        console.log(notes);
       }}
     >
       New Note

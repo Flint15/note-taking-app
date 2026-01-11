@@ -2,8 +2,13 @@ import { useState } from "react";
 import NewNoteButton from "./buttons/NewNoteButton";
 import "./Aside.css";
 
+interface Note {
+  name: string;
+  id: string;
+}
+
 export default function Aside() {
-  const [notes, setNotes] = useState<string[]>([]);
+  const [notes, setNotes] = useState<Note[]>([]);
   const [selectedNote, setSelectedNote] = useState<number>();
 
   return (
@@ -12,15 +17,16 @@ export default function Aside() {
       <NewNoteButton notes={notes} setNotes={setNotes} />
       <div className="notes-container">
         <div>
-          {notes.map((note: string, index: number) => (
+          {notes.map((note: Note, index: number) => (
             <div
               key={index}
+              id={note.id}
               className={`note ${index === selectedNote ? "selected" : ""}`}
               onClick={() => {
                 setSelectedNote(index);
               }}
             >
-              {note}
+              {note.name}
             </div>
           ))}
         </div>
