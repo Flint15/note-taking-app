@@ -22,3 +22,7 @@ textarea {
 
   resize: none; /*prevents manual resizing*/
 }
+
+textarea:focus {
+  outline: none;
+}
