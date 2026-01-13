@@ -1,0 +1,14 @@
+.icon-new-note {
+  height: 24px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  padding: 0px;
+  border: none;
+}
