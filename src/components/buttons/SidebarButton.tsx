@@ -1,8 +1,12 @@
 import "./SidebarButton.css";
 
 export default function SidebarButton() {
+  const toggleSidebar = () => {
+    document.querySelector("aside")?.classList.toggle("closed");
+  };
+
   return (
-    <button className="sidebar-button">
+    <button className="sidebar-button" onClick={toggleSidebar}>
       <svg
         className="icon-sidebar"
         xmlns="http://www.w3.org/2000/svg"
