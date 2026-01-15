@@ -1,3 +1,5 @@
+import "./DropDownMenu.css";
+
 export default function DropDownMenu({
   currentNoteIndex,
 }: {

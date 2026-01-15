@@ -30,23 +30,3 @@ aside.closed {
 .note-name-container.selected {
   background-color: aqua;
 }
-
-.dropdown-menu {
-  position: absolute;
-  right: 0px;
-  bottom: -25px;
-
-  padding: 10px;
-
-  background-color: rgb(244, 144, 177);
-
-  z-index: 100;
-
-  display: none;
-  opacity: 0;
-}
-
-.dropdown-menu.active {
-  display: block;
-  opacity: 1;
-}
