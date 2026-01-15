@@ -7,7 +7,9 @@ export default function DropDownMenu({
 }) {
   return (
     <div className={`dropdown-menu dropdown-menu-note-id-${currentNoteIndex}`}>
-      love
+      <button className="dropdown-menu-item can-focus">Star</button>
+      <button className="dropdown-menu-item can-focus">Rename</button>
+      <button className="dropdown-menu-item can-focus">Delete</button>
     </div>
   );
 }

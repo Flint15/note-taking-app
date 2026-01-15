@@ -1,7 +1,7 @@
 .dropdown-menu {
   position: absolute;
   right: 0px;
-  bottom: -45px;
+  bottom: -70px;
 
   padding: 10px;
 
@@ -16,4 +16,14 @@
 .dropdown-menu.active {
   display: block;
   opacity: 1;
+}
+
+.dropdown-menu-item {
+  padding: 5px;
+
+  background-color: transparent;
+}
+
+.can-focus:hover {
+  background-color: rgba(0, 0, 0, 0.145);
 }
