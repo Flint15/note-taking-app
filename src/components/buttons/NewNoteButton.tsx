@@ -16,7 +16,6 @@ export default function NewNoteButton({
     <button
       onClick={() => {
         setNotes([...notes, { name: "love", id: crypto.randomUUID() }]);
-        console.log(notes);
       }}
     >
       <svg

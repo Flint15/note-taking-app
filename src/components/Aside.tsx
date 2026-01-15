@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NewNoteButton from "./buttons/NewNoteButton";
 import "./Aside.css";
 
@@ -15,6 +15,10 @@ export default function Aside({
   const [notes, setNotes] = useState<Note[]>([]);
   const [selectedNote, setSelectedNote] = useState<number>();
 
+  useEffect(() => {
+    console.log(notes);
+  }, [notes]);
+
   return (
     <aside>
       <div className="all-notes-label">All Notes</div>
@@ -28,7 +32,6 @@ export default function Aside({
               className={`note ${index === selectedNote ? "selected" : ""}`}
               onClick={() => {
                 setSelectedNote(index);
-                console.log(note.id);
                 setCurrentNote(note.id);
               }}
             >
