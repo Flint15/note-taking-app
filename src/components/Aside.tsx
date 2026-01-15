@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import NewNoteButton from "./buttons/NewNoteButton";
 import "./Aside.css";
 import NoteMenuButton from "./buttons/NoteMenuButton";
@@ -9,10 +9,14 @@ interface Note {
   id: string;
 }
 
+type Notes = Record<string, string>;
+
 export default function Aside({
   setCurrentNote,
+  updateNotesContent,
 }: {
   setCurrentNote: (noteId: string) => void;
+  updateNotesContent: Dispatch<SetStateAction<Notes>>;
 }) {
   const [notes, setNotes] = useState<Note[]>([]);
   const [selectedNote, setSelectedNote] = useState<number>();
@@ -45,6 +49,7 @@ export default function Aside({
                 currentNoteId={note.id}
                 notes={notes}
                 setNotes={setNotes}
+                updateNotesContent={updateNotesContent}
               />
             </div>
           ))}

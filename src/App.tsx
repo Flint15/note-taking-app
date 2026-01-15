@@ -18,7 +18,10 @@ export default function App() {
 
   return (
     <div className="app">
-      <Aside setCurrentNote={setCurrentNote} />
+      <Aside
+        setCurrentNote={setCurrentNote}
+        updateNotesContent={updateNotesContent}
+      />
       <Main
         currentNote={currentNote}
         notesContent={notesContent}
