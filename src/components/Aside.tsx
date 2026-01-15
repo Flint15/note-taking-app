@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import NewNoteButton from "./buttons/NewNoteButton";
 import "./Aside.css";
-import NoteMenu from "./buttons/NoteMenu";
+import NoteMenuButton from "./buttons/NoteMenuButton";
+import DropDownMenu from "./DropDownMenu";
 
 interface Note {
   name: string;
@@ -39,7 +40,8 @@ export default function Aside({
               >
                 {note.name}
               </div>
-              <NoteMenu />
+              <NoteMenuButton currentNoteIndex={index} />
+              <DropDownMenu currentNoteIndex={index} />
             </div>
           ))}
         </div>

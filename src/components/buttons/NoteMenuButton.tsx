@@ -1,8 +1,14 @@
-export default function NoteMenu() {
+export default function NoteMenuButton({
+  currentNoteIndex,
+}: {
+  currentNoteIndex: number;
+}) {
   return (
     <button
       onClick={() => {
-        console.log("love");
+        document
+          .querySelector(`.dropdown-menu-note-id-${currentNoteIndex}`)
+          ?.classList.toggle("active");
       }}
     >
       <svg
