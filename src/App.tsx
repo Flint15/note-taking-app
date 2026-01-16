@@ -11,12 +11,16 @@ interface Note {
 }
 
 export default function App() {
-  const [notes, updateNotes] = useState<Note[]>([]);
+  const [notes, updateNotes] = useState<Note[]>(() => {
+    const storedNotes = localStorage.getItem("notes");
+    return storedNotes ? JSON.parse(storedNotes) : [];
+  });
   const [currentNoteId, setCurrentNoteId] = useState<string>("love");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     console.log(notes);
+    localStorage.setItem("notes", JSON.stringify(notes));
   }, [notes]);
 
   return (
