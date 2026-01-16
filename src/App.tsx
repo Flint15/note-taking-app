@@ -14,6 +14,7 @@ export default function App() {
   const [notes, updateNotes] = useState<Note[]>([]);
   const [currentNoteId, setCurrentNote] = useState<string>("love");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [inputContent, setInputContent] = useState<string>("");
 
   useEffect(() => {
     console.log(notes);
@@ -37,6 +38,8 @@ export default function App() {
         closeModal={() => {
           setIsModalOpen(false);
         }}
+        inputContent={inputContent}
+        setInputContent={setInputContent}
       />
     </div>
   );

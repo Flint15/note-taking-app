@@ -1,16 +1,17 @@
-import { useState } from "react";
 import "./RenameModal.css";
 
 export default function RenameModal({
   isModalOpen,
   closeModal,
+  inputContent,
+  setInputContent,
 }: {
   isModalOpen: boolean;
   closeModal: () => void;
+  inputContent: string;
+  setInputContent: (content: string) => void;
 }) {
   if (!isModalOpen) return null;
-
-  const [inputContent, setInputContent] = useState<string>("");
 
   return (
     <div
