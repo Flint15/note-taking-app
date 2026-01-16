@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./RenameModal.css";
 
 export default function RenameModal({
@@ -9,6 +10,8 @@ export default function RenameModal({
 }) {
   if (!isModalOpen) return null;
 
+  const [inputContent, setInputContent] = useState<string>("");
+
   return (
     <div
       className="rename-modal-overlay"
@@ -17,12 +20,25 @@ export default function RenameModal({
       }}
     >
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <input type="text" />
+        <input
+          type="text"
+          onChange={(e) => {
+            setInputContent(e.target.value);
+          }}
+        />
         <div className="buttons">
           <button className="cancel" onClick={closeModal}>
             Cancel
           </button>
-          <button className="save">Save</button>
+          <button
+            className="save"
+            onClick={() => {
+              console.log(inputContent);
+              closeModal();
+            }}
+          >
+            Save
+          </button>
         </div>
       </div>
     </div>
