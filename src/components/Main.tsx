@@ -11,11 +11,11 @@ interface Note {
 export default function Main({
   notes,
   updateNotes,
-  currentNote,
+  currentNoteId,
 }: {
   notes: Note[];
   updateNotes: Dispatch<SetStateAction<Note[]>>;
-  currentNote: string;
+  currentNoteId: string;
 }) {
   return (
     <main>
@@ -27,7 +27,7 @@ export default function Main({
           onChange={(e) => {
             updateNotes(
               notes.map((note) => {
-                if (note.id === currentNote) {
+                if (note.id === currentNoteId) {
                   note.content = e.target.value;
                   return note;
                 }
@@ -36,7 +36,7 @@ export default function Main({
             );
           }}
           id="textarea"
-          value={notes.find((note) => note.id === currentNote)?.content || ""}
+          value={notes.find((note) => note.id === currentNoteId)?.content || ""}
         ></textarea>
       </div>
     </main>

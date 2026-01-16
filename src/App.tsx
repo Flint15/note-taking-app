@@ -12,7 +12,7 @@ interface Note {
 
 export default function App() {
   const [notes, updateNotes] = useState<Note[]>([]);
-  const [currentNote, setCurrentNote] = useState<string>("love");
+  const [currentNoteId, setCurrentNote] = useState<string>("love");
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -27,7 +27,11 @@ export default function App() {
         setCurrentNote={setCurrentNote}
         setIsModalOpen={setIsModalOpen}
       />
-      <Main notes={notes} updateNotes={updateNotes} currentNote={currentNote} />
+      <Main
+        notes={notes}
+        updateNotes={updateNotes}
+        currentNoteId={currentNoteId}
+      />
       <RenameModal
         isModalOpen={isModalOpen}
         closeModal={() => {
