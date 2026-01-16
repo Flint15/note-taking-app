@@ -14,9 +14,11 @@ type Notes = Record<string, string>;
 export default function Aside({
   setCurrentNote,
   updateNotesContent,
+  setIsModalOpen,
 }: {
   setCurrentNote: (noteId: string) => void;
   updateNotesContent: Dispatch<SetStateAction<Notes>>;
+  setIsModalOpen: (state: boolean) => void;
 }) {
   const [notes, setNotes] = useState<Note[]>([]);
   const [selectedNote, setSelectedNote] = useState<number>();
@@ -50,6 +52,7 @@ export default function Aside({
                 notes={notes}
                 setNotes={setNotes}
                 updateNotesContent={updateNotesContent}
+                setIsModalOpen={setIsModalOpen}
               />
             </div>
           ))}

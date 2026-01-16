@@ -13,11 +13,13 @@ export default function DropDownMenu({
   notes,
   setNotes,
   updateNotesContent,
+  setIsModalOpen,
 }: {
   currentNoteId: string;
   notes: Note[];
   setNotes: (notes: Note[]) => void;
   updateNotesContent: Dispatch<SetStateAction<Notes>>;
+  setIsModalOpen: (state: boolean) => void;
 }) {
   const deleteNote = () => {
     console.log(currentNoteId);
@@ -40,7 +42,7 @@ export default function DropDownMenu({
     document
       .querySelector(`.dropdown-menu-note-id-${currentNoteId}`)
       ?.classList.toggle("active");
-    document.querySelector(".rename-modal-overlay")?.classList.add("active");
+    setIsModalOpen(true);
   };
 
   return (
