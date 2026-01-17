@@ -12,10 +12,12 @@ export default function NotePinner({
   notes,
   updateNotes,
   currentNoteId,
+  setCurrentNoteId,
 }: {
   notes: Note[];
   updateNotes: Dispatch<SetStateAction<Note[]>>;
   currentNoteId: string;
+  setCurrentNoteId: (noteId: string) => void;
 }) {
   return (
     <div className="note-status">
@@ -29,6 +31,7 @@ export default function NotePinner({
           updateNotes(
             notes.map((note) => {
               if (note.id === currentNoteId) {
+                setCurrentNoteId(note.id);
                 return { ...note, pinned: !note.pinned };
               }
               return note;
