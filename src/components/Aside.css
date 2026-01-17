@@ -9,6 +9,10 @@ aside.closed {
   overflow: hidden;
 }
 
+button {
+  background-color: transparent;
+}
+
 .note {
   display: flex;
   justify-content: space-between;
@@ -16,15 +20,15 @@ aside.closed {
   position: relative;
 }
 
+.note:hover {
+  background-color: rgba(0, 0, 0, 0.227);
+}
+
 .note-name-container {
   padding: 9px 0px;
   width: 100%;
   
   cursor: pointer;
-}
-
-.note-name-container:hover {
-  background-color: rgba(0, 0, 0, 0.227);
 }
 
 .note-name-container.selected {
