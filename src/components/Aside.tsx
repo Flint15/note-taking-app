@@ -33,7 +33,11 @@ export default function Aside({
         <div>
           {notes.map((note: Note, index: number) => (
             <div key={index} id={note.id} className="note">
-              <NotePinner />
+              <NotePinner
+                notes={notes}
+                updateNotes={updateNotes}
+                currentNoteId={note.id}
+              />
               <div
                 className={`note-name-container ${
                   index === selectedNote ? "selected" : ""

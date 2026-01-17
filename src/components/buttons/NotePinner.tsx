@@ -1,9 +1,37 @@
+import type { Dispatch, SetStateAction } from "react";
 import "./NotePinner.css";
 
-export default function NotePinner() {
+interface Note {
+  id: string;
+  pinned: boolean;
+  name: string;
+  content: string;
+}
+
+export default function NotePinner({
+  notes,
+  updateNotes,
+  currentNoteId,
+}: {
+  notes: Note[];
+  updateNotes: Dispatch<SetStateAction<Note[]>>;
+  currentNoteId: string;
+}) {
   return (
     <div className="note-status">
-      <button className="note-status-pinner">
+      <button
+        className="note-status-pinner"
+        onClick={() => {
+          updateNotes(
+            notes.map((note) => {
+              if (note.id === currentNoteId) {
+                return { ...note, pinned: !note.pinned };
+              }
+              return note;
+            })
+          );
+        }}
+      >
         <svg
           className="icon-pinner"
           xmlns="http://www.w3.org/2000/svg"
