@@ -2,8 +2,9 @@ import { type Dispatch, type SetStateAction } from "react";
 import "./NewNoteButton.css";
 
 interface Note {
-  name: string;
   id: string;
+  pinned: boolean;
+  name: string;
   content: string;
 }
 
@@ -19,7 +20,7 @@ export default function NewNoteButton({
       onClick={() => {
         updateNotes([
           ...notes,
-          { id: crypto.randomUUID(), name: "love", content: "" },
+          { id: crypto.randomUUID(), pinned: false, name: "love", content: "" },
         ]);
       }}
     >

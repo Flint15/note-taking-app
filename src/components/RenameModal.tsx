@@ -3,6 +3,7 @@ import "./RenameModal.css";
 
 interface Note {
   id: string;
+  pinned: boolean;
   name: string;
   content: string;
 }

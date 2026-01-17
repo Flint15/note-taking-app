@@ -6,6 +6,7 @@ import RenameModal from "./components/RenameModal";
 
 interface Note {
   id: string;
+  pinned: boolean;
   name: string;
   content: string;
 }

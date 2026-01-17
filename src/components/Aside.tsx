@@ -7,6 +7,7 @@ import NotePinner from "./buttons/NotePinner";
 
 interface Note {
   id: string;
+  pinned: boolean;
   name: string;
   content: string;
 }
