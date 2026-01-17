@@ -30,3 +30,19 @@ aside.closed {
 .note-name-container.selected {
   background-color: aqua;
 }
+
+.note-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0px 5px;
+}
+
+.note-status-pinner {
+  height: 16px;
+}
+
+.icon-pinner {
+  height: 16px;
+}
