@@ -41,7 +41,6 @@ export default function Aside({
                 notes={notes}
                 updateNotes={updateNotes}
                 currentNoteId={note.id}
-                setCurrentNoteId={setCurrentNoteId}
               />
               <div
                 className="note-name-container"
