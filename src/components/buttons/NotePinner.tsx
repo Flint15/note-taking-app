@@ -26,37 +26,25 @@ export default function NotePinner({
             : ``
         }`}
         onClick={() => {
-          let isPinned: boolean = false;
-          let currentNote: Note = {
-            id: "",
-            pinned: false,
-            name: "",
-            content: "",
-          };
-          updateNotes(
-            notes.map((note) => {
-              if (note.id === currentNoteId) {
-                if (!note.pinned) {
-                  isPinned = true;
-                }
-                currentNote = { ...note, pinned: !note.pinned };
-                return currentNote;
-              }
-              return note;
-            }),
-          );
-          if (isPinned) {
-            updateNotes([
-              currentNote,
-              ...notes.filter((note) => note.id !== currentNoteId),
-            ]);
-          } else {
-            updateNotes([
-              ...notes.filter((note) => note.id !== currentNoteId),
-              currentNote,
-            ]);
-          }
-          return;
+          updateNotes((prevNotes) => {
+            let currentNote = prevNotes.find(
+              (note) => note.id === currentNoteId,
+            );
+
+            if (!currentNote) return prevNotes;
+
+            const updatedNote = { ...currentNote, pinned: !currentNote.pinned };
+
+            return currentNote.pinned
+              ? [
+                  ...prevNotes.filter((note) => note.id !== currentNoteId),
+                  updatedNote,
+                ]
+              : [
+                  updatedNote,
+                  ...prevNotes.filter((note) => note.id !== currentNoteId),
+                ];
+          });
         }}
       >
         <svg
