@@ -47,12 +47,11 @@ export default function RenameModal({
             className="save"
             onClick={() => {
               updateNotes(
-                notes.filter((note) => {
-                  if (note.id === currentNoteId) {
-                    return (note.name = inputContent);
-                  }
-                  return note;
-                })
+                notes.map((note) =>
+                  note.id === currentNoteId
+                    ? { ...note, name: inputContent }
+                    : note,
+                ),
               );
               closeModal();
             }}
