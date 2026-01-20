@@ -1,3 +1,7 @@
+html {
+  color-scheme: dark light;
+}
+
 .app {
   display: flex;
   flex-direction: row;
