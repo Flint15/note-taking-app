@@ -1,6 +1,8 @@
 aside {
   width: 200px;
   transition: transform 0.1s ;
+
+  background-color: rgba(255, 15, 239, 0.05);
 }
 
 aside.closed {
@@ -25,7 +27,7 @@ button {
 }
 
 .note:hover {
-  background-color: rgba(0, 0, 0, 0.227);
+  background-color: #FF10F0;
 }
 
 .note-name-container {
