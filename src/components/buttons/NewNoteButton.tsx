@@ -27,10 +27,12 @@ export default function NewNoteButton({
       <svg
         className="icon-new-note"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#F3F3F3"
       >
-        <rect x="0" fill="none" width="24px" height="24px"></rect>
-        <path d="M9.707 12.879L19.59 3 21 4.41l-9.879 9.883L9 15 9.707 12.879zM18 18H6V6h7V4H6.002C4.896 4 4 4.896 4 6.002v11.996C4 19.104 4.896 20 6.002 20h11.996C19.104 20 20 19.104 20 17.998V11h-2V18z"></path>
+        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h240v80H200v560h560v-240h80v240q0 33-23.5 56.5T760-120H200Zm440-400v-120H520v-80h120v-120h80v120h120v80H720v120h-80Z" />
       </svg>
     </button>
   );

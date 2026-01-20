@@ -10,10 +10,12 @@ export default function SidebarButton() {
       <svg
         className="icon-sidebar"
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#F3F3F3"
       >
-        <rect x="0" fill="none" width="24" height="24"></rect>
-        <path d="M20 4H4A2 2 0 0 0 2 6V18a2 2 0 0 0 2 2H20a2 2 0 0 0 2-2V6A2 2 0 0 0 20 4ZM4 6H7V18H4ZM20 18H9V6H20Z"></path>
+        <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm240-80h400v-480H400v480Zm-80 0v-480H160v480h160Zm-160 0v-480 480Zm160 0h80-80Zm0-480h80-80Z" />
       </svg>
     </button>
   );
