@@ -27,8 +27,10 @@ export default function Aside({
 
   return (
     <aside>
-      <div className="all-notes-label">All Notes</div>
-      <NewNoteButton notes={notes} updateNotes={updateNotes} />
+      <div className="upper-section">
+        <div className="all-notes-label">All Notes</div>
+        <NewNoteButton notes={notes} updateNotes={updateNotes} />
+      </div>
       <div className="notes-container">
         <div>
           {notes.map((note: Note, index: number) => (
