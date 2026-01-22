@@ -8,8 +8,9 @@
   align-items: center;
   justify-content: center;
 
-  cursor: pointer;
-
   padding: 6px;
   border: none;
+  background-color: transparent;
+
+  cursor: pointer;
 }
