@@ -5,12 +5,27 @@ import { useState, useEffect } from "react";
 import RenameModal from "./components/RenameModal";
 import type { Note } from "./types/note.ts";
 
+const DEFAULT_NOTE: Note = {
+  id: crypto.randomUUID(),
+  pinned: false,
+  name: "Initial love",
+  content: "Write something pretty ≽^•⩊•^≼ ",
+};
+
 export default function App() {
   const [notes, updateNotes] = useState<Note[]>(() => {
-    const storedNotes = localStorage.getItem("notes");
-    return storedNotes ? JSON.parse(storedNotes) : [];
+    try {
+      const storedNotes = localStorage.getItem("notes");
+      const parsedNotes = storedNotes ? JSON.parse(storedNotes) : [];
+      return parsedNotes.length > 0 ? parsedNotes : [DEFAULT_NOTE];
+    } catch (error) {
+      console.error("Failed to load notes from localStorage");
+      return [DEFAULT_NOTE];
+    }
   });
-  const [currentNoteId, setCurrentNoteId] = useState<string>("love");
+  const [currentNoteId, setCurrentNoteId] = useState<string>(
+    () => notes[0].id || DEFAULT_NOTE.id,
+  );
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
