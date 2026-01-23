@@ -32,7 +32,10 @@ export default function DropDownMenu({
         <button className="dropdown-menu-item can-focus" onClick={renameNote}>
           Rename
         </button>
-        <button className="dropdown-menu-item can-focus" onClick={deleteNote}>
+        <button
+          className={`dropdown-menu-item delete ${notes.length === 1 ? "alone" : ""} can-focus`}
+          onClick={deleteNote}
+        >
           Delete
         </button>
       </div>
