@@ -5,17 +5,21 @@ import type { Note } from "../../types/note";
 export default function NewNoteButton({
   notes,
   updateNotes,
+  setCurrentNoteId,
 }: {
   notes: Note[];
   updateNotes: Dispatch<SetStateAction<Note[]>>;
+  setCurrentNoteId: (noteId: string) => void;
 }) {
   return (
     <button
       className="new-note-button"
       onClick={() => {
+        const newNoteId = crypto.randomUUID();
+        setCurrentNoteId(newNoteId);
         updateNotes([
           ...notes,
-          { id: crypto.randomUUID(), pinned: false, name: "love", content: "" },
+          { id: newNoteId, pinned: false, name: "love", content: "" },
         ]);
       }}
     >
