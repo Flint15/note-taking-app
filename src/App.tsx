@@ -38,6 +38,7 @@ export default function App() {
       <Aside
         notes={notes}
         updateNotes={updateNotes}
+        currentNoteId={currentNoteId}
         setCurrentNoteId={setCurrentNoteId}
         setIsModalOpen={setIsModalOpen}
       />

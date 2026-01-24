@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import NewNoteButton from "./buttons/NewNoteButton";
 import "./Aside.css";
 import NoteMenuButton from "./buttons/NoteMenuButton";
@@ -9,16 +9,16 @@ import type { Note } from "../types/note";
 export default function Aside({
   notes,
   updateNotes,
+  currentNoteId,
   setCurrentNoteId,
   setIsModalOpen,
 }: {
   notes: Note[];
   updateNotes: Dispatch<SetStateAction<Note[]>>;
+  currentNoteId: string;
   setCurrentNoteId: (noteId: string) => void;
   setIsModalOpen: (state: boolean) => void;
 }) {
-  const [selectedNote, setSelectedNote] = useState<number>();
-
   return (
     <aside>
       <div className="upper-section">
@@ -35,7 +35,7 @@ export default function Aside({
             <div
               key={index}
               id={note.id}
-              className={`note ${index === selectedNote ? "selected" : ""}`}
+              className={`note ${note.id === currentNoteId ? "selected" : ""}`}
             >
               <NotePinner
                 notes={notes}
@@ -45,7 +45,6 @@ export default function Aside({
               <div
                 className="note-name-container"
                 onClick={() => {
-                  setSelectedNote(index);
                   setCurrentNoteId(note.id);
                 }}
               >
