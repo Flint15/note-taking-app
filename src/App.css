@@ -4,7 +4,8 @@
   --bg-medium: #2d2d2d;
   --pink-accent: #e84393;
   --pink-soft: #e843931a;
-  --pink-borders: #e8439333;
+  --border-pink: #e8439333;
+  --border-gray: #3a3a3a;
 }
 
 html {

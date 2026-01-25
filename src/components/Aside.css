@@ -2,7 +2,7 @@ aside {
   width: 320px;
   transition: transform 0.1s ;
 
-  border-right: 1px solid #3a3a3a;
+  border-right: 1px solid var(--border-gray);
 
   background-color: var(--bg-dark);
 }
@@ -21,7 +21,7 @@ aside.closed {
   padding-top: 10px;
   padding-bottom: 10px;
 
-  border-bottom: 1px solid #3a3a3a;
+  border-bottom: 1px solid var(--border-gray);
 }
 
 .all-notes-label {
@@ -44,7 +44,7 @@ aside.closed {
 
   height: 50px;
 
-  border-bottom: 1px solid #3a3a3a;
+  border-bottom: 1px solid var(--border-gray);
 }
 
 .note:hover {
@@ -64,5 +64,5 @@ aside.closed {
 .note.selected {
   background-color: var(--pink-soft);
   border-left: 3px solid var(--pink-accent);
-  box-shadow: inset 0 0 0 1px var(--pink-borders);
+  box-shadow: inset 0 0 0 1px var(--border-pink);
 }
