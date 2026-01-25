@@ -43,6 +43,6 @@
 }
 
 .can-focus:hover {
-  background-color: rgb(21, 21, 21);
+  background-color: var(--pink-accent);
   border-radius: 10px;
 }
