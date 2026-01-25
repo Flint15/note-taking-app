@@ -1,5 +1,5 @@
 aside {
-  width: 300px;
+  width: 320px;
   transition: transform 0.1s ;
 
   border-right: 1px solid #3a3a3a;
@@ -18,8 +18,8 @@ aside.closed {
   align-items: center;
   justify-content: space-between;
 
-  padding-top: 4px;
-  padding-bottom: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 
   border-bottom: 1px solid #3a3a3a;
 }
@@ -28,7 +28,7 @@ aside.closed {
   margin-left: 10px;
 
   font-size: 18px;
-
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .notes-container {
