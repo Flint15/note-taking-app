@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import NewNoteButton from "./buttons/NewNoteButton";
 import "./Aside.css";
 import NoteMenuButton from "./buttons/NoteMenuButton";
@@ -21,6 +21,10 @@ export default function Aside({
 }) {
   const [activeDropDowmMenuId, setActiveDropDownMenuId] =
     useState<string>("none");
+
+  useEffect(() => {
+    setActiveDropDownMenuId("none");
+  }, [currentNoteId]);
 
   return (
     <aside>
