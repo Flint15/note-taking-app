@@ -1,20 +1,24 @@
+import type { Dispatch, SetStateAction } from "react";
 import "./NoteMenuButton.css";
 
 export default function NoteMenuButton({
   currentNoteId,
-  setCurrentNoteId,
+  activeDropDowmMenuId,
+  setActiveDropDownMenuId,
 }: {
   currentNoteId: string;
-  setCurrentNoteId: (id: string) => void;
+  activeDropDowmMenuId: string;
+  setActiveDropDownMenuId: Dispatch<SetStateAction<string>>;
 }) {
   return (
     <button
       className="note-menu-button"
       onClick={() => {
-        setCurrentNoteId(currentNoteId);
-        document
-          .querySelector(`.dropdown-menu-note-id-${currentNoteId}`)
-          ?.classList.toggle("active");
+        if (activeDropDowmMenuId === currentNoteId) {
+          setActiveDropDownMenuId("none");
+          return;
+        }
+        setActiveDropDownMenuId(currentNoteId);
       }}
     >
       <svg
