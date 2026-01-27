@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from "react";
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react";
 import SidebarButton from "./buttons/SidebarButton";
 import "./Main.css";
 import type { Note } from "../types/note";
@@ -13,11 +13,17 @@ export default function Main({
   updateNotes: Dispatch<SetStateAction<Note[]>>;
   currentNoteId: string;
 }) {
+  const [previewMode, turnPreviewMode] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log(previewMode);
+  }, [previewMode]);
+
   return (
     <main>
       <div className="note-toolbar">
         <SidebarButton />
-        <PreviewButton />
+        <PreviewButton turnPreviewMode={turnPreviewMode} />
       </div>
       <div className="note-editor">
         <textarea

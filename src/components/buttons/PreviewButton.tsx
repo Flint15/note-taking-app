@@ -1,8 +1,18 @@
+import type { Dispatch, SetStateAction } from "react";
 import "./PreviewButton.css";
 
-export default function PreviewButton() {
+export default function PreviewButton({
+  turnPreviewMode,
+}: {
+  turnPreviewMode: Dispatch<SetStateAction<boolean>>;
+}) {
   return (
-    <button className="preview-button">
+    <button
+      className="preview-button"
+      onClick={() => {
+        turnPreviewMode((prevState) => !prevState);
+      }}
+    >
       <svg
         className="icon-preview-button"
         fill="#ffffffdf"
