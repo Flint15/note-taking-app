@@ -21,6 +21,7 @@ A simple and sweet note-taking application built with React and TypeScript (,,>ï
 
 - **Collapse Sidebar** - Toggle the sidebar to maximize your writing space
 - **Visual Selection** - Selected notes are highlighted with a pink accent
+- **Markdown Mode** - Toggle between text and markdown version
 - **Smooth Animations** - (i hope so :) )
 
 ## Getting started
