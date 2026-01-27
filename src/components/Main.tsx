@@ -2,6 +2,7 @@ import type { Dispatch, SetStateAction } from "react";
 import SidebarButton from "./buttons/SidebarButton";
 import "./Main.css";
 import type { Note } from "../types/note";
+import PreviewButton from "./buttons/PreviewButton";
 
 export default function Main({
   notes,
@@ -16,6 +17,7 @@ export default function Main({
     <main>
       <div className="note-toolbar">
         <SidebarButton />
+        <PreviewButton />
       </div>
       <div className="note-editor">
         <textarea

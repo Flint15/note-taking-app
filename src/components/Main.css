@@ -9,8 +9,11 @@ main {
   flex: 0 0 auto;
 
   padding: 16px 0px;
-
   background-color: var(--bg-darkest);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sidebar-button {
