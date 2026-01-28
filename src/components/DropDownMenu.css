@@ -56,13 +56,15 @@
   pointer-events: none;
 }
 
-.dropdown-menu-item.download {
-  border-radius: 20px;
-  color: var(--pink-accent)
-}
-
 .dropdown-menu-item.download:hover {
   color: white;
+}
+
+.can-focus {
+  border-radius: 20px;
+  transition:
+    background-color .2s,
+    border-radius .2s;
 }
 
 .can-focus:hover {
