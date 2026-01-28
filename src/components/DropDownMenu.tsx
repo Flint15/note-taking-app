@@ -15,16 +15,20 @@ export default function DropDownMenu({
   setIsModalOpen: (state: boolean) => void;
   activeDropDowmMenuId: string;
 }) {
-  const deleteNote = () => {
+  const deleteNote = (): void => {
     console.log(currentNoteId);
     updateNotes(notes.filter((note) => note.id !== currentNoteId));
   };
 
-  const renameNote = () => {
+  const renameNote = (): void => {
     document
       .querySelector(`.dropdown-menu-note-id-${currentNoteId}`)
       ?.classList.toggle("active");
     setIsModalOpen(true);
+  };
+
+  const downloadNote = (): void => {
+    console.log("love");
   };
 
   return (
@@ -42,7 +46,10 @@ export default function DropDownMenu({
         >
           Delete
         </button>
-        <button className="dropdown-menu-item can-focus download">
+        <button
+          className="dropdown-menu-item can-focus download"
+          onClick={downloadNote}
+        >
           Download
         </button>
       </div>
