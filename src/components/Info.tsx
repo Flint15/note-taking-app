@@ -22,6 +22,11 @@ export default function Info() {
           fill="#000000"
         />
       </svg>
+      <div className="info-content">
+        Your notes are stored locally in your browser. They won't sync across
+        devices, and will be deleted if you clear your browser data. Export your
+        notes regularly to back them up.
+      </div>
     </div>
   );
 }
