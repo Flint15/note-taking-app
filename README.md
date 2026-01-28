@@ -10,19 +10,20 @@ A simple and sweet note-taking application built with React and TypeScript (,,>�
 - **Rename Notes** - Change the name of your notes
 - **Delete Notes** - Remove notes that you don't need anymore (can't delete your last note!)
 - **Pin Notes** - Keep important notes at the top
-- **Download Notes** - Click download in dropdown meny and download that note as .txt
+- **Download Notes** - Export individual notes as `.txt` files via the dropdown menu
 
 ### ✍️ Note Editing
 
-- **Rich Text Area** - Write your thoughs)
+- **Clean Text Editor** - Distraction-free writing experience
+- **Markdown Support** - Write in Markwon and preview formatted content with the preview button
 - **Auto-Save** - Your notes are automatically saved to local storage
-- **Easy Navigation** - Click any note and start editing
+- **Easy Navigation** - Switch between notes with a single click
 
 ### 🎨 User Interface
 
 - **Collapse Sidebar** - Toggle the sidebar to maximize your writing space
 - **Visual Selection** - Selected notes are highlighted with a pink accent
-- **Markdown Mode** - Toggle between text and markdown version
+- **Preview Mode** - Toggle between edit and preview modes to see your Markdown rendered
 - **Smooth Animations** - (i hope so :) )
 
 ## Getting started
