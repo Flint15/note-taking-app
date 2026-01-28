@@ -65,7 +65,7 @@ export default function Aside({
                 updateNotes={updateNotes}
                 currentNoteId={note.id}
                 setIsModalOpen={setIsModalOpen}
-                activeDropDowmMenuId={activeDropDownMenuId}
+                activeDropDownMenuId={activeDropDownMenuId}
               />
             </div>
           ))}

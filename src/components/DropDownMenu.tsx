@@ -7,13 +7,13 @@ export default function DropDownMenu({
   updateNotes,
   currentNoteId,
   setIsModalOpen,
-  activeDropDowmMenuId,
+  activeDropDownMenuId,
 }: {
   notes: Note[];
   updateNotes: Dispatch<SetStateAction<Note[]>>;
   currentNoteId: string;
   setIsModalOpen: (state: boolean) => void;
-  activeDropDowmMenuId: string;
+  activeDropDownMenuId: string;
 }) {
   const deleteNote = (): void => {
     updateNotes(notes.filter((note) => note.id !== currentNoteId));
@@ -45,7 +45,7 @@ export default function DropDownMenu({
 
   return (
     <div
-      className={`dropdown-menu dropdown-menu-note-id-${currentNoteId} ${currentNoteId === activeDropDowmMenuId ? `active` : ``}`}
+      className={`dropdown-menu dropdown-menu-note-id-${currentNoteId} ${currentNoteId === activeDropDownMenuId ? `active` : ``}`}
     >
       <div className="dropdown-menu-items-container">
         <div className="common-items-container">
