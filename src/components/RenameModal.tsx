@@ -28,17 +28,18 @@ export default function RenameModal({
     >
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <input
+          className="rename-input"
           type="text"
           onChange={(e) => {
             setInputContent(e.target.value);
           }}
         />
         <div className="buttons">
-          <button className="cancel" onClick={closeModal}>
+          <button className="cancel-button" onClick={closeModal}>
             Cancel
           </button>
           <button
-            className="save"
+            className="save-button"
             onClick={() => {
               updateNotes(
                 notes.map((note) =>
