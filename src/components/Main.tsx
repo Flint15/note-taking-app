@@ -17,7 +17,7 @@ export default function Main({
   const [previewMode, turnPreviewMode] = useState<boolean>(false);
 
   useEffect(() => {
-    turnPreviewMode((prevMode) => (prevMode ? false : false));
+    turnPreviewMode(false);
   }, [currentNoteId]);
 
   return (
