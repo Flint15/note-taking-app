@@ -28,14 +28,14 @@ export default function DropDownMenu({
   };
 
   const downloadNote = (): void => {
-    const content = notes.find((note) => note.id === currentNoteId)?.content;
+    const content = notes.find((note) => note.id === currentNoteId);
     if (!content) return;
 
-    const blob = new Blob([content], { type: "text/plain" });
+    const blob = new Blob([content.content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "note.txt";
+    link.download = `${content.name}.txt`;
 
     document.body.appendChild(link);
     link.click();
