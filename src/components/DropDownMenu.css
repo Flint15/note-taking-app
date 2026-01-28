@@ -1,7 +1,7 @@
 .dropdown-menu {
   position: absolute;
   right: 0px;
-  bottom: -105px;
+  bottom: -155px;
 
   padding: 10px 20px;
 
@@ -23,6 +23,7 @@
 .buttons-container {
   display: flex;
   flex-direction: column;
+  gap: 5px;
 }
 
 .dropdown-menu-item {
@@ -43,11 +44,11 @@
 }
 
 .dropdown-menu-item.download {
-  background-color: var(--pink-soft);
-  border-radius: 10px;
+  border: 1px solid var(--border-gray);
+  border-radius: 20px;
 }
 
 .can-focus:hover {
   background-color: var(--pink-accent);
-  border-radius: 10px;
+  border-radius: 20px;
 }
