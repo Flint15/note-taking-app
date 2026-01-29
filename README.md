@@ -1,4 +1,4 @@
-# Note Taking App
+# Pink Notes >⩊<
 
 A simple and sweet note-taking application built with React and TypeScript (,,>﹏<,,)👉👈
 
