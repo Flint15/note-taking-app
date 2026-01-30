@@ -2,6 +2,12 @@
 
 A simple and sweet note-taking application built with React and TypeScript (,,>﹏<,,)👉👈
 
+## 🌐 Live App
+
+**Try it now: [https://pinknotes.xyz/](https://pinknotes.xyz/)**
+
+No installation needed - start taking notes immediately in your browser!
+
 ## ✨ Features
 
 ### 📌 Note Management
@@ -26,6 +32,16 @@ A simple and sweet note-taking application built with React and TypeScript (,,>�
 - **Preview Mode** - Toggle between edit and preview modes to see your Markdown rendered
 - **Smooth Animations** - (i hope so :) )
 
+### 💾 Privacy First
+
+All notes are stored **locally in your browser** using localStorage:
+
+- ✅ Your data stays on your device
+- ✅ No server uploads
+- ✅ Completely private
+
+**Important:** Export your notes regularly as they'll be lost if you clear browser data.
+
 ## Getting started
 
 ### Prerequisites
@@ -47,8 +63,8 @@ npm --version #Should be v9+
 1. Clone or download the repo:
 
 ```
-git clone https://github.com/Flint15/note-taking-app.git
-cd note-taking-app
+git clone https://github.com/Flint15/pink-notes.git
+cd pink-notes
 ```
 
 2. Install dependecies
@@ -74,15 +90,16 @@ Navigate to the URL shown in your terminal (usually `http://localhost:5173`)
 - Vite
 - CSS
 
-### 💾 Storage
-
-All notes are stored locally in your browser using localStorage, so your data stays private and available offline!
-
 ### 📄 License
 
 This project is open source and available for personal use.
 
+## 🐱‍💻 About
+
+Created with 愛 by Vladimir Chertkov [https://github.com/Flint15](https://github.com/Flint15)
+
 ---
 
-Made with 愛 and a lot of 抹茶🍵
+Made with a lot of 抹茶🍵
+
 ≽^•⩊•^≼
