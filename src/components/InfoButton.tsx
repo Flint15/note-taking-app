@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from "react";
-import "./Info.css";
+import "./InfoButton.css";
 
 export default function Info({
   setInfoModal,

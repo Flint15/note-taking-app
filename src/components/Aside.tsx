@@ -5,7 +5,7 @@ import NoteMenuButton from "./buttons/NoteMenuButton";
 import DropDownMenu from "./DropDownMenu";
 import NotePinner from "./buttons/NotePinner";
 import type { Note } from "../types/note";
-import Info from "./Info";
+import Info from "./InfoButton";
 import ImportButton from "./buttons/ImportButton";
 import UploadButton from "./buttons/UploadButton";
 
