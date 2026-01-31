@@ -26,24 +26,16 @@ export default function UploadButton({
         }
         const name: string = file.name.split(".")[0];
         const result = target.result;
-        if (typeof result !== "string") {
-          const newNoteId = crypto.randomUUID();
-          setCurrentNoteId(newNoteId);
-          updateNotes([
-            ...notes,
-            { id: newNoteId, pinned: false, name: file.name, content: "" },
-          ]);
-          event.target.value = "";
-          return;
-        }
-
-        const content: string = result;
-
         const newNoteId = crypto.randomUUID();
         setCurrentNoteId(newNoteId);
         updateNotes([
           ...notes,
-          { id: newNoteId, pinned: false, name: name, content: content },
+          {
+            id: newNoteId,
+            pinned: false,
+            name: name,
+            content: typeof result === "string" ? result : "",
+          },
         ]);
         event.target.value = "";
       };
