@@ -49,7 +49,6 @@ export default function DropDownMenu({
     >
       <div className="dropdown-menu-items-container">
         <div className="common-items-container">
-          <button className="dropdown-menu-item can-focus">Star</button>
           <button className="dropdown-menu-item can-focus" onClick={renameNote}>
             Rename
           </button>
