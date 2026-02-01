@@ -1,6 +1,6 @@
 import type { ChangeEvent, Dispatch, SetStateAction } from "react";
 import "./UploadButton.css";
-import type { Note } from "../../types/note";
+import type { NoteData } from "../../types/note";
 
 export default function UploadButton({
   activeImport,
@@ -9,8 +9,8 @@ export default function UploadButton({
   setCurrentNoteId,
 }: {
   activeImport: boolean;
-  notes: Note[];
-  updateNotes: Dispatch<SetStateAction<Note[]>>;
+  notes: NoteData[];
+  updateNotes: Dispatch<SetStateAction<NoteData[]>>;
   setCurrentNoteId: (chatId: string) => void;
 }) {
   const handleFileSelect = (event: ChangeEvent<HTMLInputElement>): void => {

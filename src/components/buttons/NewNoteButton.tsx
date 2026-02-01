@@ -1,14 +1,14 @@
 import { type Dispatch, type SetStateAction } from "react";
 import "./NewNoteButton.css";
-import type { Note } from "../../types/note";
+import type { NoteData } from "../../types/note";
 
 export default function NewNoteButton({
   notes,
   updateNotes,
   setCurrentNoteId,
 }: {
-  notes: Note[];
-  updateNotes: Dispatch<SetStateAction<Note[]>>;
+  notes: NoteData[];
+  updateNotes: Dispatch<SetStateAction<NoteData[]>>;
   setCurrentNoteId: (noteId: string) => void;
 }) {
   return (

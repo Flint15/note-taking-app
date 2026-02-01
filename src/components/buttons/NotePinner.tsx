@@ -1,14 +1,14 @@
 import type { Dispatch, SetStateAction } from "react";
 import "./NotePinner.css";
-import type { Note } from "../../types/note";
+import type { NoteData } from "../../types/note";
 
 export default function NotePinner({
   notes,
   updateNotes,
   currentNoteId,
 }: {
-  notes: Note[];
-  updateNotes: Dispatch<SetStateAction<Note[]>>;
+  notes: NoteData[];
+  updateNotes: Dispatch<SetStateAction<NoteData[]>>;
   currentNoteId: string;
 }) {
   return (
