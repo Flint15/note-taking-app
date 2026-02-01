@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
+import React, { useState, type Dispatch, type SetStateAction } from "react";
 import "./RenameModal.css";
 import type { Note } from "../types/note";
 
@@ -19,6 +19,23 @@ export default function RenameModal({
 
   const [inputContent, setInputContent] = useState<string>("");
 
+  const confirmRename = (): void => {
+    updateNotes(
+      notes.map((note) =>
+        note.id === currentNoteId ? { ...note, name: inputContent } : note,
+      ),
+    );
+    closeModal();
+  };
+
+  const handleKeyDown = (
+    event: React.KeyboardEvent<HTMLInputElement>,
+  ): void => {
+    if (event.key === "Enter") {
+      confirmRename();
+    }
+  };
+
   return (
     <div
       className="rename-modal-overlay"
@@ -33,24 +50,13 @@ export default function RenameModal({
           onChange={(e) => {
             setInputContent(e.target.value);
           }}
+          onKeyDown={handleKeyDown}
         />
         <div className="buttons">
           <button className="cancel-button" onClick={closeModal}>
             Cancel
           </button>
-          <button
-            className="save-button"
-            onClick={() => {
-              updateNotes(
-                notes.map((note) =>
-                  note.id === currentNoteId
-                    ? { ...note, name: inputContent }
-                    : note,
-                ),
-              );
-              closeModal();
-            }}
-          >
+          <button className="save-button" onClick={confirmRename}>
             Save
           </button>
         </div>
