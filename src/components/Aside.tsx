@@ -1,19 +1,17 @@
 import { type Dispatch, type SetStateAction } from "react";
 import NewNoteButton from "./buttons/NewNoteButton";
 import "./Aside.css";
-import NoteMenuButton from "./buttons/NoteMenuButton";
-import DropDownMenu from "./DropDownMenu";
-import NotePinner from "./buttons/NotePinner";
 import type { NoteData } from "../types/note";
 import Info from "./InfoButton";
 import ImportButton from "./buttons/ImportButton";
 import UploadButton from "./buttons/UploadButton";
+import Note from "./Note";
 
 export default function Aside({
   notes,
   updateNotes,
-  currentNoteId,
   setCurrentNoteId,
+  currentNoteId,
   setRenameModalOpen,
   activeDropDownMenuId,
   setActiveDropDownMenuId,
@@ -23,8 +21,8 @@ export default function Aside({
 }: {
   notes: NoteData[];
   updateNotes: Dispatch<SetStateAction<NoteData[]>>;
-  currentNoteId: string;
   setCurrentNoteId: (noteId: string) => void;
+  currentNoteId: string;
   setRenameModalOpen: (state: boolean) => void;
   activeDropDownMenuId: string;
   setActiveDropDownMenuId: Dispatch<SetStateAction<string>>;
@@ -54,38 +52,16 @@ export default function Aside({
       <div className="notes-container">
         <div>
           {notes.map((note: NoteData) => (
-            <div
-              key={note.id}
-              id={note.id}
-              className={`note ${note.id === currentNoteId ? "selected" : ""}`}
-            >
-              <NotePinner
-                notes={notes}
-                updateNotes={updateNotes}
-                currentNoteId={note.id}
-              />
-              <div
-                className="note-name-container"
-                title={note.name}
-                onClick={() => {
-                  setCurrentNoteId(note.id);
-                }}
-              >
-                {note.name}
-              </div>
-              <NoteMenuButton
-                currentNoteId={note.id}
-                activeDropDowmMenuId={activeDropDownMenuId}
-                setActiveDropDownMenuId={setActiveDropDownMenuId}
-              />
-              <DropDownMenu
-                notes={notes}
-                updateNotes={updateNotes}
-                currentNoteId={note.id}
-                setRenameModalOpen={setRenameModalOpen}
-                activeDropDownMenuId={activeDropDownMenuId}
-              />
-            </div>
+            <Note
+              note={note}
+              notes={notes}
+              updateNotes={updateNotes}
+              setCurrentNoteId={setCurrentNoteId}
+              currentNoteId={currentNoteId}
+              setRenameModalOpen={setRenameModalOpen}
+              activeDropDownMenuId={activeDropDownMenuId}
+              setActiveDropDownMenuId={setActiveDropDownMenuId}
+            />
           ))}
         </div>
       </div>
